@@ -1,26 +1,16 @@
 import React from "react";
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Card, Image } from "semantic-ui-react";
 
-export default function CharacterCard({ character }) {
-  // image={image}
+export default function ItemCard({ item }) {
   return (
     <Card>
-      <Image src={character.image} wrapped ui={false} />
+      <Image src={item.img} wrapped ui={false} />
       <Card.Content>
-        <Card.Header>{character.name}</Card.Header>
+        <Card.Header>{item.title}</Card.Header>
         <Card.Meta>
-          <span className="date">
-            {character.species} {character.status}
-          </span>
+          <span className="date">Created by {item.first_name}</span>
         </Card.Meta>
-        <Card.Description>Location: {character.location.name}</Card.Description>
-        <Card.Description>Origin: {character.origin.name}</Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <a>
-          <Icon name="user" />
-          Episodes
-        </a>
+        <Card.Description>{item.description}</Card.Description>
       </Card.Content>
     </Card>
   );

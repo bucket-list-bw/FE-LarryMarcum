@@ -8,7 +8,7 @@ export default function AppRouter() {
   return (
     <div className="page-view ui bottom attached segment active tab">
       <Switch>
-        <Route path="/list" component={BucketList} />
+        <Route path="/active" component={BucketList} />
         <Route path="/completed" component={CompletedList} />
       </Switch>
     </div>
