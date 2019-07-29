@@ -14,6 +14,7 @@ const createLabel = (iconName, labelText) => (
 // const homeLabel = createLabel("home", "Home");
 const bucketList = createLabel("home", "Your Bucket List");
 const completedItems = createLabel("users", "Completed Items");
+const newLabel = createLabel("plus square", "New Item");
 
 const panes = [
   //   {
@@ -32,6 +33,11 @@ const panes = [
         to={`/completed`}
         content={completedItems}
       />
+    )
+  },
+  {
+    menuItem: (
+      <Menu.Item key="new-item" as={Nav} to={`/new`} content={newLabel} />
     )
   }
 ];
