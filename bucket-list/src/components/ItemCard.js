@@ -12,6 +12,20 @@ export default function ItemCard({ item }) {
         </Card.Meta>
         <Card.Description>{item.description}</Card.Description>
       </Card.Content>
+      {/* <Card.Content className="check">
+        <input type="checkbox" />
+        <label>Mark Complete</label>
+      </Card.Content> */}
+      <Card.Content extra>
+        <div className="check-container">
+          <input type="checkbox" />
+          <label>Complete</label>
+        </div>
+
+        <button className="edit">Edit</button>
+        <button className="delete">&times;</button>
+        {/* <p>Test</p> */}
+      </Card.Content>
     </Card>
   );
 }

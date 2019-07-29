@@ -11,10 +11,14 @@ const createLabel = (iconName, labelText) => (
   </span>
 );
 
+// const homeLabel = createLabel("home", "Home");
 const bucketList = createLabel("home", "Your Bucket List");
 const completedItems = createLabel("users", "Completed Items");
 
 const panes = [
+  //   {
+  //     menuItem: <Menu.Item key="home" as={Nav} to={`/`} content={homeLabel} />
+  //   },
   {
     menuItem: (
       <Menu.Item key="list" as={Nav} to={`/active`} content={bucketList} />

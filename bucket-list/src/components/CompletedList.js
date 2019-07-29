@@ -8,7 +8,7 @@ export default function BucketList() {
 
   //   setItems(data);
 
-  //   console.log("Data: ", data);
+  //   console.log("Data: ", items);
 
   return (
     <section className="bucket-list">
