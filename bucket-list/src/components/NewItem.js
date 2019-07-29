@@ -12,6 +12,7 @@ export default function ItemCard(props) {
     event.preventDefault();
     props.addItem(item);
   }
+
   return (
     <form onSubmit={event => handleSubmit(event)}>
       <label>
