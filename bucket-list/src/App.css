@@ -31,3 +31,14 @@
     transform: rotate(360deg);
   }
 }
+
+.bucket-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 200px;
+}

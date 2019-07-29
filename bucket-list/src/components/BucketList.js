@@ -11,7 +11,7 @@ export default function BucketList() {
   //   console.log("Data: ", data);
 
   return (
-    <section>
+    <section className="bucket-list">
       {data.map(item => (
         <ItemCard item={item} />
       ))}
