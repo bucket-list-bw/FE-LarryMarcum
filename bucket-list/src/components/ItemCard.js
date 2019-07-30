@@ -1,16 +1,17 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
 
-export default function ItemCard({ item }) {
+export default function ItemCard(props) {
+  console.log("card props: ", props);
   return (
     <Card>
-      <Image src={item.img} wrapped ui={false} />
+      <Image src={props.item.img} wrapped ui={false} />
       <Card.Content>
-        <Card.Header>{item.title}</Card.Header>
+        <Card.Header>{props.item.title}</Card.Header>
         <Card.Meta>
-          <span className="date">Created by {item.first_name}</span>
+          <span className="date">Created by {props.item.first_name}</span>
         </Card.Meta>
-        <Card.Description>{item.description}</Card.Description>
+        <Card.Description>{props.item.description}</Card.Description>
       </Card.Content>
       {/* <Card.Content className="check">
         <input type="checkbox" />
@@ -23,7 +24,12 @@ export default function ItemCard({ item }) {
         </div>
 
         <button className="edit">Edit</button>
-        <button className="delete">&times;</button>
+        <button
+          className="delete"
+          onClick={() => props.deleteActiveItem(props.item)}
+        >
+          &times;
+        </button>
         {/* <p>Test</p> */}
       </Card.Content>
     </Card>

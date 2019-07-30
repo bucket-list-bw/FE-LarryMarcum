@@ -1,4 +1,4 @@
-export const data = [
+export const dataComplete = [
   {
     id: 1,
     first_name: "Marilin",

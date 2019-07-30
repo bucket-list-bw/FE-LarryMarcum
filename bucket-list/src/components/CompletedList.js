@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ItemCard from "./ItemCard";
-import { data } from "../data-complete";
 
-export default function BucketList() {
-  const [items, setItems] = useState(data);
+export default function BucketList(props) {
+  // const [items, setItems] = useState(data);
 
   //   setItems(data);
 
@@ -12,7 +11,7 @@ export default function BucketList() {
 
   return (
     <section className="bucket-list">
-      {data.map(item => (
+      {props.items.map(item => (
         <ItemCard item={item} />
       ))}
     </section>
