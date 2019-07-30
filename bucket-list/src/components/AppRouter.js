@@ -11,7 +11,13 @@ export default function AppRouter(props) {
       <Switch>
         <Route
           path="/active"
-          render={() => <BucketList {...props} items={props.items} />}
+          render={() => (
+            <BucketList
+              {...props}
+              items={props.items}
+              deleteActiveItem={props.deleteActiveItem}
+            />
+          )}
         />
         <Route
           path="/completed"

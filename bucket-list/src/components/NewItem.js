@@ -11,6 +11,7 @@ export default function ItemCard(props) {
   function handleSubmit(event) {
     event.preventDefault();
     props.addItem(item);
+    setItem({ title: "", first_name: "", description: "" });
   }
 
   return (

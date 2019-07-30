@@ -6,7 +6,11 @@ export default function BucketList(props) {
   return (
     <section className="bucket-list">
       {props.items.map(item => (
-        <ItemCard item={item} />
+        <ItemCard
+          {...props}
+          item={item}
+          deleteActiveItem={props.deleteActiveItem}
+        />
       ))}
     </section>
   );
