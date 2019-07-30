@@ -13,7 +13,12 @@ export default function AppRouter(props) {
           path="/active"
           render={() => <BucketList {...props} items={props.items} />}
         />
-        <Route path="/completed" component={CompletedList} />
+        <Route
+          path="/completed"
+          render={() => (
+            <CompletedList {...props} items={props.completedItems} />
+          )}
+        />
         <Route
           path="/new"
           render={() => <NewItem {...props} addItem={props.addItem} />}
