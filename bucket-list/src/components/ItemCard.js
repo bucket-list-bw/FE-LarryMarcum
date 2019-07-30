@@ -2,7 +2,6 @@ import React from "react";
 import { Card, Image } from "semantic-ui-react";
 
 export default function ItemCard(props) {
-  console.log("card props: ", props);
   return (
     <Card>
       <Image src={props.item.img} wrapped ui={false} />
@@ -19,14 +18,14 @@ export default function ItemCard(props) {
       </Card.Content> */}
       <Card.Content extra>
         <div className="check-container">
-          <input type="checkbox" />
+          <input type="checkbox" onClick={() => props.moveItem(props.item)} />
           <label>Complete</label>
         </div>
 
         <button className="edit">Edit</button>
         <button
           className="delete"
-          onClick={() => props.deleteActiveItem(props.item)}
+          onClick={() => props.deleteItem(props.item, props.isCompleted)}
         >
           &times;
         </button>
