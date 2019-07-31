@@ -12,6 +12,7 @@ export default function BucketList(props) {
           deleteItem={props.deleteItem}
           isCompleted={false}
           moveItem={props.moveItem}
+          updateItem={props.updateItem}
         />
       ))}
     </section>

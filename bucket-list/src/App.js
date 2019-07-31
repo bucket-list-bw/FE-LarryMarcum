@@ -36,6 +36,13 @@ function App() {
     setCompletedItems([...completedItems, item]);
   }
 
+  function updateItem(item, updatedItem) {
+    const index = items.indexOf(item);
+    const tempItems = items;
+    tempItems[index] = updatedItem;
+    setItems(tempItems);
+  }
+
   console.log("items: ", items);
   console.log("completed items: ", completedItems);
   return (
@@ -48,6 +55,7 @@ function App() {
         completedItems={completedItems}
         deleteItem={deleteItem}
         moveItem={moveItem}
+        updateItem={updateItem}
       />
     </main>
   );
