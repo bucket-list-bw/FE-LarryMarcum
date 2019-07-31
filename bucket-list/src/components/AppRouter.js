@@ -17,6 +17,7 @@ export default function AppRouter(props) {
               items={props.items}
               deleteItem={props.deleteItem}
               moveItem={props.moveItem}
+              updateItem={props.updateItem}
             />
           )}
         />
