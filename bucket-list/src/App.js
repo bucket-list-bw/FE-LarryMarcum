@@ -14,12 +14,30 @@ function App() {
     setItems([...items, item]);
   }
 
-  function deleteActiveItem(item) {
-    const index = items.indexOf(item);
-    const editedArray = items.splice(index, 1);
-    setItems(editedArray);
+  function deleteItem(item, isCompleted) {
+    if (isCompleted) {
+      const index = completedItems.indexOf(item);
+      const tempArray = completedItems;
+      const removed = tempArray.splice(index, 1);
+      setCompletedItems(tempArray);
+    } else {
+      const index = items.indexOf(item);
+      const tempArray = items;
+      const removed = tempArray.splice(index, 1);
+      setItems(tempArray);
+    }
   }
 
+  function moveItem(item) {
+    const index = items.indexOf(item);
+    const tempItems = items;
+    const removedItem = tempItems.splice(index, 1);
+    setItems(tempItems);
+    setCompletedItems([...completedItems, item]);
+  }
+
+  console.log("items: ", items);
+  console.log("completed items: ", completedItems);
   return (
     <main>
       <Header />
@@ -28,7 +46,8 @@ function App() {
         addItem={addItem}
         items={items}
         completedItems={completedItems}
-        deleteActiveItem={deleteActiveItem}
+        deleteItem={deleteItem}
+        moveItem={moveItem}
       />
     </main>
   );
