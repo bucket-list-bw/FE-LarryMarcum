@@ -10,13 +10,17 @@ import { Tumblr } from "react-social-sharing";
 
 export default function BucketList(props) {
   return (
+
     <>
       <section className="bucket-list">
         {props.items.map(item => (
           <ItemCard
             {...props}
             item={item}
-            deleteActiveItem={props.deleteActiveItem}
+            deleteItem={props.deleteItem}
+            isCompleted={false}
+            moveItem={props.moveItem}
+            updateItem={props.updateItem}
           />
         ))}
       </section>
@@ -27,5 +31,6 @@ export default function BucketList(props) {
       <Tumblr link="http://sharingbuttons.io" />
       <Facebook link="http://sharingbuttons.io" />
     </>
+
   );
 }
