@@ -43,8 +43,27 @@ header h3 {
   width: 200px;
   height: 550px;
   margin: 20px !important;
+  box-shadow: 5px 5px 5px rgb(95, 95, 95) !important;
 }
 
+.card button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.card .edit {
+  background: #1b1c1d;
+  color: white;
+  border: none;
+}
+
+.card .check-container {
+  color: rgb(32, 32, 32);
+}
+
+.card .content {
+  background: rgb(243, 243, 243) !important;
+}
 .extra {
   display: flex;
   flex-direction: row;

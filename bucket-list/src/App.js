@@ -22,7 +22,7 @@ function App() {
       setCompletedItems(tempArray);
     } else {
       const index = items.indexOf(item);
-      const tempArray = items;
+      const tempArray = [...items];
       const removed = tempArray.splice(index, 1);
       setItems(tempArray);
     }
@@ -30,7 +30,7 @@ function App() {
 
   function moveItem(item) {
     const index = items.indexOf(item);
-    const tempItems = items;
+    const tempItems = [...items];
     const removedItem = tempItems.splice(index, 1);
     setItems(tempItems);
     setCompletedItems([...completedItems, item]);

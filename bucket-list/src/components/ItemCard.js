@@ -41,11 +41,9 @@ export default function ItemCard(props) {
         ui={false}
       />
       <Card.Content>
-        <Card.Header>{props.item.title}</Card.Header>
-        <Card.Meta>
-          <span className="date">Created by {props.item.first_name}</span>
-        </Card.Meta>
-        <Card.Description>{props.item.description}</Card.Description>
+        <Card.Header>{props.item.goal}</Card.Header>
+
+        <Card.Description>{props.item.journalEntry}</Card.Description>
       </Card.Content>
       <Card.Content extra>
         <div className="check-container">

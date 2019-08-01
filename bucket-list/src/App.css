@@ -56,3 +56,33 @@
   width: 32px;
   height: 32px;
 }
+
+.new-item {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 50%;
+  margin-left: 38px;
+}
+
+.new-item form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+  height: 300px;
+}
+
+.description {
+  height: 100px;
+  text-align: start;
+}
+
+input {
+  width: 100%;
+}
+
+form button {
+  width: 30%;
+  margin-left: 35%;
+}
