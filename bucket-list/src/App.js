@@ -17,7 +17,7 @@ function App() {
   function deleteItem(item, isCompleted) {
     if (isCompleted) {
       const index = completedItems.indexOf(item);
-      const tempArray = completedItems;
+      const tempArray = [...completedItems];
       const removed = tempArray.splice(index, 1);
       setCompletedItems(tempArray);
     } else {
@@ -38,7 +38,7 @@ function App() {
 
   function updateItem(item, updatedItem) {
     const index = items.indexOf(item);
-    const tempItems = items;
+    const tempItems = [...items];
     tempItems[index] = updatedItem;
     setItems(tempItems);
   }
