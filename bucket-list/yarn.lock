@@ -7161,6 +7161,7 @@ react-share@^3.0.0:
 react-social-sharing@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/react-social-sharing/-/react-social-sharing-3.0.1.tgz#4c49ce17a4cba1e375defae5df1c31f4c3350094"
+  integrity sha512-1G3xV6x0y49mSS2vZw+K6zRqATiDYi3YYeZ1FpuqgLUqD40KxP2xvSSlhY2hGTZzymB73miVXAy6i+7GqQ+mjA==
   dependencies:
     styled-components "^4.1.1"
     styled-is "^1.1.5"
