@@ -55,6 +55,7 @@ export default function ItemCard(props) {
 
           <Modal.Content image>
             <Image
+              className="modal-img"
               wrapped
               size="medium"
               src={
