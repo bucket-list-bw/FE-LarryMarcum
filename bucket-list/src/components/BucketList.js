@@ -16,7 +16,10 @@ export default function BucketList(props) {
           <ItemCard
             {...props}
             item={item}
-            deleteActiveItem={props.deleteActiveItem}
+            deleteItem={props.deleteItem}
+            isCompleted={false}
+            moveItem={props.moveItem}
+            updateItem={props.updateItem}
           />
         ))}
       </section>

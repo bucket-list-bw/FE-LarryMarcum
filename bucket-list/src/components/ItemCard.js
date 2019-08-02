@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { Card, Image, Modal, Header } from "semantic-ui-react";
+import career from "../career.jpg";
+import experience from "../experience.jpg";
+import travel from "../travel.jpg";
+import education from "../education.jpg";
+import family from "../family.jpg";
 
 export default function ItemCard(props) {
   const [updatedItem, setUpdatedItem] = useState(props.item);
@@ -18,7 +23,23 @@ export default function ItemCard(props) {
   }
   return (
     <Card>
-      <Image src={props.item.img} wrapped ui={false} />
+      <Image
+        src={
+          props.item.photoUrl === "career"
+            ? career
+            : props.item.photoUrl === "experience"
+            ? experience
+            : props.item.photoUrl === "travel"
+            ? travel
+            : props.item.photoUrl === "education"
+            ? education
+            : props.item.photoUrl === "family"
+            ? family
+            : "http://dummyimage.com/200x200.jpg/ff4444/ffffff"
+        }
+        wrapped
+        ui={false}
+      />
       <Card.Content>
         <Card.Header>{props.item.title}</Card.Header>
         <Card.Meta>
