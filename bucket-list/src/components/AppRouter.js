@@ -15,14 +15,20 @@ export default function AppRouter(props) {
             <BucketList
               {...props}
               items={props.items}
-              deleteActiveItem={props.deleteActiveItem}
+              deleteItem={props.deleteItem}
+              moveItem={props.moveItem}
+              updateItem={props.updateItem}
             />
           )}
         />
         <Route
           path="/completed"
           render={() => (
-            <CompletedList {...props} items={props.completedItems} />
+            <CompletedList
+              {...props}
+              items={props.completedItems}
+              deleteItem={props.deleteItem}
+            />
           )}
         />
         <Route
