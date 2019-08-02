@@ -41,11 +41,9 @@ export default function ItemCard(props) {
         ui={false}
       />
       <Card.Content>
-        <Card.Header>{props.item.title}</Card.Header>
-        <Card.Meta>
-          <span className="date">Created by {props.item.first_name}</span>
-        </Card.Meta>
-        <Card.Description>{props.item.description}</Card.Description>
+        <Card.Header>{props.item.goal}</Card.Header>
+
+        <Card.Description>{props.item.journalEntry}</Card.Description>
       </Card.Content>
       <Card.Content extra>
         <div className="check-container">
@@ -56,38 +54,54 @@ export default function ItemCard(props) {
           <Modal.Header>Edit</Modal.Header>
 
           <Modal.Content image>
-            <Image wrapped size="medium" src={updatedItem.img} />
+            <Image
+              wrapped
+              size="medium"
+              src={
+                updatedItem.photoUrl === "career"
+                  ? career
+                  : updatedItem.photoUrl === "experience"
+                  ? experience
+                  : updatedItem.photoUrl === "travel"
+                  ? travel
+                  : updatedItem.photoUrl === "education"
+                  ? education
+                  : updatedItem.photoUrl === "family"
+                  ? family
+                  : "http://dummyimage.com/200x200.jpg/ff4444/ffffff"
+              }
+            />
             <form onSubmit={event => handleSubmit(event)}>
               <Modal.Description>
                 <Header>
                   <label>
+                    <select name="photoUrl" onChange={handleChange}>
+                      <option value="default">Select Category</option>
+                      <option value="travel">Travel</option>
+                      <option value="experience">Experience</option>
+                      <option value="career">Career</option>
+                      <option value="education">Education</option>
+                      <option value="family">Family</option>
+                    </select>
+                  </label>
+                  <label>
                     Title:&nbsp;&nbsp;
                     <input
                       type="text"
-                      name="title"
-                      value={updatedItem.title}
+                      name="goal"
+                      value={updatedItem.goal}
                       onChange={handleChange}
                     />
                   </label>
                 </Header>
-                <p>
-                  <label>
-                    Created by:&nbsp;&nbsp;
-                    <input
-                      type="text"
-                      name="first_name"
-                      value={updatedItem.first_name}
-                      onChange={handleChange}
-                    />
-                  </label>
-                </p>
+                <p />
                 <p>
                   <label>
                     Description:&nbsp;&nbsp;
                     <input
                       type="text"
-                      name="description"
-                      value={updatedItem.description}
+                      name="journalEntry"
+                      value={updatedItem.journalEntry}
                       onChange={handleChange}
                     />
                   </label>
